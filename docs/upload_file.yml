@@ -1,0 +1,72 @@
+tags:
+  - name: Upload File
+post:
+  summary: Upload a file
+parameters:
+  - name: file_upload
+    in: formData
+    description: The file to be uploaded
+    required: true
+    type: file
+
+#  - name: file_choice
+#    in: formData
+#    description: Select the file
+#    required: true
+#    type: string
+#    enum: [file1, file2, file3]
+responses:
+  '200':
+    description: OK
+  '400':
+    description: Bad Request
+#  '500' :
+#    description: salaah
+
+#tags:
+
+#  - name: Upload File
+#post:
+#  summary: Upload a file
+#parameters:
+#  - name: file_upload
+#    label: Upload File
+#    type: file
+#
+#  - name: file_choice
+#    label: Choose File
+#    type: select
+#    options:
+#    - label: File 1
+#      value: file1
+#    - label: File 2
+#      value: file2
+#    - label: File 3
+#      value: file3
+#responses:
+#    '200':
+#      description: File uploaded successfully
+#      content:
+#        application/json:
+#          schema:
+#            type: object
+#            properties:
+#              status:
+#                type: string
+#                example: success
+#              message:
+#                type: string
+#                example: File uploaded successfully
+#              filename:
+#                type: string
+#                example: uploaded_file.txt
+#    '400':
+#      description: Bad request, file not provided or incorrect format
+#      content:
+#        application/json:
+#          schema:
+#            type: object
+#            properties:
+#              error:
+#                type: string
+#                example: No file provided or No file selected

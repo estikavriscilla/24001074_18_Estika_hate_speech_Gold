@@ -1,0 +1,20 @@
+tags:
+  - name: Upload File
+post:
+  summary: Upload a file
+parameters:
+  - name: file_upload
+    in: formData
+    description: The file to be uploaded
+    required: true
+    type: file
+
+responses:
+  '200':
+    description: OK
+    content:
+      application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+        schema:
+          type: file
+  '400':
+    description: Bad Request

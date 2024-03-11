@@ -1,0 +1,56 @@
+#tags:
+#  - name: Challenge Gold
+#get:
+#  description: Filter Tweets
+#responses:
+#    '200':
+#      description: Successful response
+#    '400':
+#      description: Bad Request
+#    '500':
+#      description: Internal Server Error
+
+
+tags:
+  - File Upload
+summary: Upload an Excel file
+consumes:
+  - multipart/form-data
+parameters:
+  - name: file
+    in: formData
+    required: true
+    type: file
+    description: The Excel file to be uploaded
+#responses:
+#  200:
+#    description: File uploaded successfully
+#    content:
+#      application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+#    schema:
+#      type: object
+#      properties:
+#        message:
+#          type: string
+#          description: Confirmation message
+#        output_file:
+#          type: string
+#          description: Path to the exported Excel file
+responses:
+  200:
+    description: File uploaded successfully
+    content:
+      application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+        schema:
+          type: string
+          format: binary
+          description: Excel file
+
+  400:
+    description: Error in file upload
+    schema:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
